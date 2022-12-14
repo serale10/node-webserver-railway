@@ -22,20 +22,19 @@ app.get('/', function (req, res) {
   });
 
 app.get('/generic', function (req, res) {
-    res.render('generic')
+    res.render('generic', {
+        nombre: 'Fernando Herrera',
+        titulo: 'Curso Node'
+    });
 });
 
 app.get('/elements', function (req, res) {
-    res.render('elements')
+    res.render('elements', {
+        nombre: 'Fernando Herrera',
+        titulo: 'Curso Node'
+    });
 });
 
-app.get('/generic', function (req, res) {
-    res.sendfile(__dirname + '/public/generic.html')
-  });
-
-app.get('/elements', function (req, res) {
-res.sendfile(__dirname + '/public/elements.html')
-});
 
 app.get('*', function (req, res) {
     res.sendfile(__dirname + '/public/404.html')
@@ -43,5 +42,5 @@ app.get('*', function (req, res) {
 
 
 app.listen( port, () =>{
-    console.log(`Example app listening at http://localhostL:${port}`);
+    console.log(`Example app listening at http://localhost:${port}`);
 });
